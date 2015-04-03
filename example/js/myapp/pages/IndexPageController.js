@@ -10,16 +10,16 @@ myapp.pages.IndexPageController = function (myapp, $$) {
   // Init method
   (function () {
 
-    // Use Confirmbox plugin
+    // Use toast plugin
     var options = {},
-      confirmbox = myapp.confirmbox('Marked star', '<div>☆</div>', options);
+      toast = myapp.toast('Marked star', '<div>☆</div>', options);
 
     $$('#btnshow').click(function () {
-      confirmbox.showBox(true);
+      toast.show(true);
     });
     
     $$('#btnhide').click(function () {
-      confirmbox.showBox(false);
+      toast.show(false);
     });
 
   }());
