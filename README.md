@@ -12,7 +12,7 @@ https://www.youtube.com/watch?v=1qCRmpyQCuw&feature=youtu.be
 
 ## Live demo
 
-http://www.timo-ernst.net/misc/confirmboxdemo/
+http://www.timo-ernst.net/misc/toastdemo/
 
 ## How to use
 
