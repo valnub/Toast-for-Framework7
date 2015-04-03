@@ -1,6 +1,12 @@
 /*jslint browser: true*/
 /*global console, Framework7, alert, Dom7*/
 
+/**
+ * A plugin for Framework7 to show black little confirmation boxes
+ *
+ * @author www.timo-ernst.net
+ * @license MIT
+ */
 Framework7.prototype.plugins.confirmbox = function (app, globalPluginParams) {
   'use strict';
   
