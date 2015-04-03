@@ -1,4 +1,4 @@
-# Confirmbox
+# Toast for Framework7
 
 A plugin for Framwork7 to show little black toasts iOS-style
 
