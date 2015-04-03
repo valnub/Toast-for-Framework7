@@ -25,7 +25,8 @@ http://www.timo-ernst.net/misc/toastdemo/
 2) Create a new toast
 
 ```javascript
-var toast = myapp.toast('Marked star', '<div>☆</div>', {})
+var app = new Framework7();
+var toast = app.toast('Marked star', '<div>☆</div>', {})
 ```
 
 As first parameter you set the message which gets displayed at the bottom of the toast. As 2nd parameter you have to set the icon. You can use free HTML here so set what ever you want (ASCii, Font-Icon, Images, SVG...). Third is reserved for options.
