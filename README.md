@@ -4,7 +4,7 @@ A plugin for Framwork7 to show little black toasts iOS-style
 
 ## Screenshot
 
-![Confirmbox screenshot](https://raw.githubusercontent.com/valnub/Confirmbox-Framwork7-plugin/master/screenshots/confirmbox-screenshot.jpg)
+![Confirmbox screenshot](http://www.timo-ernst.net/wp-content/uploads/2015/04/toast-screenshot-169x300.png)
 
 ## Video
 
