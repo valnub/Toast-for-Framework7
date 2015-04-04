@@ -12,27 +12,31 @@ Framework7.prototype.plugins.toast = function (app, globalPluginParams) {
   
   var Toast = function (text, iconhtml, options) {
     var self = this,
-      $$ = Dom7;
+      $$ = Dom7,
+      $box;
 
-    function hideBox($box) {
-      if ($box) {
-        $box.removeClass('fadein').transitionEnd(function () {
-          $box.remove();
+    function hideBox($curbox) {
+      if ($curbox) {
+        $curbox.removeClass('fadein').transitionEnd(function () {
+          $curbox.remove();
         });
       }
     }
     
     this.show = function (show) {
       if (show) {
+        var clientLeft,
+          $curbox;
         
-        // Create box
-        var $box = $$('<div class="toast-container show">'),
-          clientLeft;
+        // Remove old toasts first if there are still any
+        $$('.toast-container').off('click').off('transitionEnd').remove();
+        $box = $$('<div class="toast-container show">');
         
         // Add content
         $box.html('<div class="toast-icon">' + iconhtml + '</div><div class="toast-msg">' + text + '</div>');
         
         // Add to DOM
+        clientLeft = $box[0].clientLeft;
         $$('body').append($box);
         
         // Hide box on click
@@ -47,8 +51,9 @@ Framework7.prototype.plugins.toast = function (app, globalPluginParams) {
         $box.addClass('fadein');
 
         // Automatically hide box after few seconds
+        $curbox = $box;
         setTimeout(function () {
-          hideBox($box);
+          hideBox($curbox);
         }, 1500);
         
       } else {
