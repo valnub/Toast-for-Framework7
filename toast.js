@@ -40,11 +40,11 @@ Framework7.prototype.plugins.toast = function (app, globalPluginParams) {
           hideBox($box);
         });
 
-        // Fade in toast
-        $box.addClass('fadein');
-        
         // Dirty hack to cause relayout xD
         clientLeft = $box[0].clientLeft;
+        
+        // Fade in toast
+        $box.addClass('fadein');
 
         // Automatically hide box after few seconds
         setTimeout(function () {
