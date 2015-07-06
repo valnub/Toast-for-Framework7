@@ -35,14 +35,14 @@ As first parameter you set the message which gets displayed at the bottom of the
 
 ```javascript
 // show
-toast.show(true);
+toast.show();
 ```
 
 or
 
 ```javascript
 // hide
-toast.show(false);
+toast.hide();
 ```
 
 You're done :D
