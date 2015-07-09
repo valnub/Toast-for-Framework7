@@ -36,6 +36,7 @@ As first parameter you set the message which gets displayed at the bottom of the
 ```javascript
 // show
 toast.show();
+toast.show("message");
 ```
 
 or

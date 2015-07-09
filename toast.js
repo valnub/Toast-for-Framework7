@@ -27,7 +27,7 @@ Framework7.prototype.plugins.toast = function (app, globalPluginParams) {
       return toString.call(obj) === '[object String]';
     }
     
-    this.show = function () {
+    this.show = function (message) {
       var clientLeft,
           $curbox,
           html = [];
@@ -43,6 +43,10 @@ Framework7.prototype.plugins.toast = function (app, globalPluginParams) {
             iconhtml + 
           '</div>'
         );
+      }
+
+      if (isString(message) && message.length > 0) {
+        text = message;
       }
 
       if (isString(text) && text.length > 0) {
