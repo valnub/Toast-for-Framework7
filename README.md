@@ -16,14 +16,14 @@ http://www.timo-ernst.net/misc/toastdemo/
 
 ## How to use
 
-1) Add the script to your project (after Framework7 script!) and also add CSS reference:
+### 1. Add the script to your project (after Framework7 script!) and also add CSS reference:
 
 ```html
 <link rel="stylesheet" href="toast.css">
 <script src="toast.js"></script>
 ```
 
-2) Create a new toast
+### 2. Create a new toast
 
 You can create a new toast with a icon:
 
@@ -41,7 +41,7 @@ var app = new Framework7();
 var toast = app.toast('A long long message', '', {});
 ```
 
-3) Now you can show or hide the box:
+### 3. Now you can show or hide the box:
 
 ```javascript
 // show
@@ -51,7 +51,9 @@ toast.show();
 toast.hide();
 ```
 
-You can also change what message is displayed:
+***Note:*** *In older versions of this plugin these methods were `toast.show(true)` and `toast.show(false)` but these were replaced by `toast.show()` and `toast.hide()` which is a little more convenient. You might have to change this in your code though if you upgrade from an older version.*
+
+You can also change what message is displayed **after** initialization:
 
 ```javascript
 toast.show("message");
