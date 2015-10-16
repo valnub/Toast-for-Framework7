@@ -12,8 +12,8 @@ Framework7.prototype.plugins.toast = function (app, globalPluginParams) {
   
   var Toast = function (text, iconhtml, options) {
     var self = this,
-      $$ = Dom7,
-      $box;
+        $$ = Dom7,
+        $box;
 
     function hideBox($curbox) {
       if ($curbox) {
@@ -22,43 +22,68 @@ Framework7.prototype.plugins.toast = function (app, globalPluginParams) {
         });
       }
     }
+
+    function isString(obj) {
+      return toString.call(obj) === '[object String]';
+    }
     
-    this.show = function (show) {
-      if (show) {
-        var clientLeft,
-          $curbox;
-        
-        // Remove old toasts first if there are still any
-        $$('.toast-container').off('click').off('transitionEnd').remove();
-        $box = $$('<div class="toast-container show">');
-        
-        // Add content
-        $box.html('<div class="toast-icon">' + iconhtml + '</div><div class="toast-msg">' + text + '</div>');
-        
-        // Add to DOM
-        clientLeft = $box[0].clientLeft;
-        $$('body').append($box);
-        
-        // Hide box on click
-        $box.click(function () {
-          hideBox($box);
-        });
-
-        // Dirty hack to cause relayout xD
-        clientLeft = $box[0].clientLeft;
-        
-        // Fade in toast
-        $box.addClass('fadein');
-
-        // Automatically hide box after few seconds
-        $curbox = $box;
-        setTimeout(function () {
-          hideBox($curbox);
-        }, 1500);
-        
-      } else {
-        hideBox($$('.toast-container'));
+    this.show = function () {
+      var clientLeft,
+          $curbox,
+          html = [];
+      
+      // Remove old toasts first if there are still any
+      $$('.toast-container').off('click').off('transitionEnd').remove();
+      $box = $$('<div class="toast-container show">');
+      
+      // Add content
+      if (isString(iconhtml) && iconhtml.length > 0) {
+        html.push(
+          '<div class="toast-icon">' + 
+            iconhtml + 
+          '</div>'
+        );
       }
+
+      if (isString(text) && text.length > 0) {
+        html.push(
+          '<div class="toast-msg">' + 
+            text + 
+          '</div>'
+        );
+      }
+
+      $box.html(
+        html.join('')
+      );
+
+      // Add to DOM
+      clientLeft = $box[0].clientLeft;
+      $$('body').append($box);
+
+      $box.css('margin-top', $box.outerHeight() / -2 + 'px')
+          .css('margin-left', $box.outerWidth() / -2 + 'px');
+      
+      // Hide box on click
+      $box.click(function () {
+        hideBox($box);
+      });
+
+      // Dirty hack to cause relayout xD
+      clientLeft = $box[0].clientLeft;
+      
+      // Fade in toast
+      $box.addClass('fadein');
+
+      // Automatically hide box after few seconds
+      $curbox = $box;
+      setTimeout(function () {
+        hideBox($curbox);
+      }, 1500);
+    };
+
+    this.hide = function() {
+      hideBox($box);
     };
     
     return this;
@@ -67,5 +92,4 @@ Framework7.prototype.plugins.toast = function (app, globalPluginParams) {
   app.toast = function (text, iconhtml, options) {
     return new Toast(text, iconhtml, options);
   };
-  
 };

@@ -12,16 +12,23 @@ myapp.pages.IndexPageController = function (myapp, $$) {
 
     // Use toast plugin
     var options = {},
-      toast = myapp.toast('Marked star', '<div>☆</div>', options);
+        toast = myapp.toast('Marked star', '<div>☆</div>', options),
+        toastWithOutIcon = myapp.toast('', '', {});
 
     $$('#btnshow').click(function () {
-      toast.show(true);
+      toast.show();
     });
     
     $$('#btnhide').click(function () {
-      toast.show(false);
+      toast.hide();
     });
 
-  }());
+    $$('#btnShowNoIcon').click(function() {
+      toastWithOutIcon.show("A long long message");
+    });
 
+    $$('#btnHideNoIcon').click(function() {
+      toastWithOutIcon.hide();
+    });
+  }());
 };
