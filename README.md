@@ -17,6 +17,7 @@ http://www.timo-ernst.net/misc/toastdemo/
 ## How to use
 
 1) Add the script to your project (after Framework7 script!) and also add CSS reference:
+
 ```html
 <link rel="stylesheet" href="toast.css">
 <script src="toast.js"></script>
@@ -24,26 +25,36 @@ http://www.timo-ernst.net/misc/toastdemo/
 
 2) Create a new toast
 
+You can create a new toast with a icon:
+
 ```javascript
 var app = new Framework7();
-var toast = app.toast('Marked star', '<div>☆</div>', {})
+var toast = app.toast('Marked star', '<div>☆</div>', {});
 ```
 
 As first parameter you set the message which gets displayed at the bottom of the toast. As 2nd parameter you have to set the icon. You can use free HTML here so set what ever you want (ASCii, Font-Icon, Images, SVG...). Third is reserved for options.
 
-3) Now you can show or hide the box
+If you just want to show a message, let 2nd parameter empty:
+
+```javascript
+var app = new Framework7();
+var toast = app.toast('A long long message', '', {});
+```
+
+3) Now you can show or hide the box:
 
 ```javascript
 // show
 toast.show();
-toast.show("message");
-```
 
-or
-
-```javascript
 // hide
 toast.hide();
+```
+
+You can also change what message is displayed:
+
+```javascript
+toast.show("message");
 ```
 
 You're done :D
