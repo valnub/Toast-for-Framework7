@@ -1,0 +1,10 @@
+{
+  "name": "toast-for-framework7",
+  "version": "1.0.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/valnub/Toast-for-Framework7.git"
+  },
+  "description": "A toast component plugin for iOS Framework7"
+}
