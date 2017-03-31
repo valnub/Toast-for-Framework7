@@ -29,7 +29,8 @@ You can create a new toast with a icon:
 
 ```javascript
 var app = new Framework7();
-var toast = app.toast('Marked star', '<div>☆</div>', {});
+var options = {};
+var toast = app.toast('Marked star', '<div>☆</div>', options);
 ```
 
 As first parameter you set the message which gets displayed at the bottom of the toast. As 2nd parameter you have to set the icon. You can use free HTML here so set what ever you want (ASCii, Font-Icon, Images, SVG...). Third is reserved for options.
@@ -38,7 +39,8 @@ If you just want to show a message, let 2nd parameter empty:
 
 ```javascript
 var app = new Framework7();
-var toast = app.toast('A long long message', '', {});
+var options = {};
+var toast = app.toast('A long long message', '', options);
 ```
 
 ### 3. Now you can show or hide the box:
@@ -57,6 +59,22 @@ You can also change what message is displayed **after** initialization:
 
 ```javascript
 toast.show("message");
+```
+
+### 4. Options & Callbacks
+
+You can set the following options:
+
+```javascript
+var app = new Framework7();
+var options = {
+  // Callback gets called when toast is hidden
+  onHide: function () {
+    console.log('hidden');
+  },
+  duration: 2000 // Hide toast after 2 seconds
+};
+var toast = app.toast('Marked star', '<div>☆</div>', options);
 ```
 
 You're done :D
