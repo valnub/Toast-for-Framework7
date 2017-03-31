@@ -12,9 +12,11 @@ myapp.pages.IndexPageController = function (myapp, $$) {
 
     // Use toast plugin
     var options = {
+            // Callback gets called when toast is hidden
             onHide: function () {
                 console.log('hidden');
-            }
+            },
+            duration: 2000 // Hide toast after 2 seconds
         },
         toast = myapp.toast('Marked star', '<div>☆</div>', options),
         toastWithOutIcon = myapp.toast('', '', options);

@@ -1,4 +1,4 @@
-.toast-container{
+.toast-container {
   position: fixed;
   width: 150px;
   left: 50%;
@@ -13,23 +13,23 @@
   font-family: 'Helvetica-Neue', 'HelveticaNeue', arial, sans-serif;
   display: none;
   opacity: 0;
-  transition: opacity 0.8s
+  transition: opacity 0.8s;
 }
 
-.toast-container.show{
+.toast-container.show {
   display: block;
 }
 
-.toast-container.fadein{
+.toast-container.fadein {
   opacity: 1;
 }
 
-.toast-icon{
-  font-size:85px;
-  text-align:center;
+.toast-icon {
+  font-size: 85px;
+  text-align: center;
 }
 
-.toast-msg{
-  text-align:center;
-  font-weight:normal;
+.toast-msg {
+  text-align: center;
+  font-weight: normal;
 }

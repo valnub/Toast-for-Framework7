@@ -77,11 +77,13 @@ Framework7.prototype.plugins.toast = function (app, globalPluginParams) {
       // Fade in toast
       $box.addClass('fadein');
 
+      var duration = options && options.duration ? options.duration : 1500;
+
       // Automatically hide box after few seconds
       $curbox = $box;
       setTimeout(function () {
         hideBox($curbox);
-      }, 1500);
+    }, duration);
     };
 
     this.hide = function() {
