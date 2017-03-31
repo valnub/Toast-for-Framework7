@@ -1,6 +1,3 @@
-/*jslint browser: true*/
-/*global console, Framework7, alert, Dom7*/
-
 /**
  * A plugin for Framework7 to show black little toasts
  *
@@ -19,6 +16,7 @@ Framework7.prototype.plugins.toast = function (app, globalPluginParams) {
       if ($curbox) {
         $curbox.removeClass('fadein').transitionEnd(function () {
           $curbox.remove();
+          if (options && typeof options.onHide == 'function') options.onHide();
         });
       }
     }

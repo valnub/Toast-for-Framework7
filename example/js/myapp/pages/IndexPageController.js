@@ -11,9 +11,13 @@ myapp.pages.IndexPageController = function (myapp, $$) {
   (function () {
 
     // Use toast plugin
-    var options = {},
+    var options = {
+            onHide: function () {
+                console.log('hidden');
+            }
+        },
         toast = myapp.toast('Marked star', '<div>☆</div>', options),
-        toastWithOutIcon = myapp.toast('', '', {});
+        toastWithOutIcon = myapp.toast('', '', options);
 
     $$('#btnshow').click(function () {
       toast.show();
