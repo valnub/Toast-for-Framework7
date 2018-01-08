@@ -2,6 +2,10 @@
 
 A plugin for Framwork7 to show little black toasts iOS-style
 
+## Compatibility
+- v1: Yes
+- v2: No (Toast already [included](http://framework7.io/docs/toast.html) in F7 v2 core components)
+
 ## Screenshot
 
 ![Confirmbox screenshot](http://www.timo-ernst.net/wp-content/uploads/2015/04/toast-screenshot-169x300.png)
